@@ -16,12 +16,13 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
  */
 
 const inlineKeyboard = new InlineKeyboard()
-inlineKeyboard.webApp('projectname', 'https://projectname.vercel.app')
+inlineKeyboard.webApp('Calorie Counter', 'https://projectname.vercel.app')
 
 const keyboard = new Keyboard();
-keyboard.webApp('projectname', 'https://projectname.vercel.app')
+keyboard.webApp('Calorie Counter', 'https://projectname.vercel.app')
 
 bot.command('start', (ctx) => ctx.reply('Welcome!', { reply_markup: inlineKeyboard }))
+
 bot.command('app', (ctx) => ctx.reply('Welcome!', { reply_markup: keyboard }))
 
 bot.command('ping', (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`))
