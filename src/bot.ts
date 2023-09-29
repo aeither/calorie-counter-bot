@@ -1,5 +1,5 @@
 import { TELEGRAM_BOT_TOKEN } from '../lib/constants.ts'
-import { Bot, InlineKeyboard, Keyboard } from './deps.ts'
+import { Bot, Context, InlineKeyboard, Keyboard } from './deps.ts'
 
 export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
   client: {
@@ -16,13 +16,15 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
  */
 
 const inlineKeyboard = new InlineKeyboard()
-inlineKeyboard.webApp('Calorie Counter', 'https://calorie-counter.vercel.app')
+inlineKeyboard.webApp('Calorie Counter', 'https://calorie-counter-jade.vercel.app')
 
 const keyboard = new Keyboard();
-keyboard.webApp('Calorie Counter', 'https://calorie-counter.vercel.app')
+keyboard.webApp('Calorie Counter', 'https://calorie-counter-jade.vercel.app')
 
 bot.command('start', (ctx) => ctx.reply('Welcome!', { reply_markup: inlineKeyboard }))
 
 bot.command('app', (ctx) => ctx.reply('Welcome!', { reply_markup: keyboard }))
 
 bot.command('ping', (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`))
+
+// bot.filter(ctx => ctx.update.message == "value")

@@ -24,7 +24,7 @@ await liveBot.api.setMyCommands(commands)
 // await bot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN}`)
 
 // Update Live Webhook
-const PROJECT_URL = 'https://projectname.deno.dev'
+const PROJECT_URL = 'https://calorie-counter.deno.dev'
 await liveBot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN_LIVE}`)
 // or
 // https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
