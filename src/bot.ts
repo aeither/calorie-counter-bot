@@ -16,10 +16,10 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
  */
 
 const inlineKeyboard = new InlineKeyboard()
-inlineKeyboard.webApp('Calorie Counter', 'https://projectname.vercel.app')
+inlineKeyboard.webApp('Calorie Counter', 'https://calorie-counter.vercel.app')
 
 const keyboard = new Keyboard();
-keyboard.webApp('Calorie Counter', 'https://projectname.vercel.app')
+keyboard.webApp('Calorie Counter', 'https://calorie-counter.vercel.app')
 
 bot.command('start', (ctx) => ctx.reply('Welcome!', { reply_markup: inlineKeyboard }))
 
