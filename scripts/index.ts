@@ -20,11 +20,11 @@ await liveBot.api.setMyCommands(commands)
  */
 
 // Update Local Webhook
-// const PROJECT_URL = 'https://0d3b-188-119-60-248.ngrok-free.app'
-// await bot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN}`)
+const PROJECT_URL = 'https://0b55-217-165-234-214.ngrok-free.app'
+await bot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN}`)
 
 // Update Live Webhook
-const PROJECT_URL = 'https://calorie-counter.deno.dev'
-await liveBot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN_LIVE}`)
+// const PROJECT_URL = 'https://calorie-counter.deno.dev'
+// await liveBot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN_LIVE}`)
 // or
 // https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
