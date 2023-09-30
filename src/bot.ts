@@ -15,16 +15,28 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
  * Bot Commands
  */
 
-const inlineKeyboard = new InlineKeyboard()
-inlineKeyboard.webApp('Calorie Counter', 'https://calorie-counter-jade.vercel.app')
+const WEBAPP_URL =
+  Deno.env.get('NODE_ENV') === 'development'
+    ? 'https://0b55-217-165-234-214.ngrok-free.app'
+    : 'https://calorie-counter-jade.vercel.app'
+console.log('WEBAPP_URL', WEBAPP_URL)
 
-const keyboard = new Keyboard();
-keyboard.webApp('Calorie Counter', 'https://calorie-counter-jade.vercel.app')
+// const inlineKeyboard = new InlineKeyboard()
+// inlineKeyboard.webApp('Calorie Counter', WEBAPP_URL)
 
-bot.command('start', (ctx) => ctx.reply('Welcome!', { reply_markup: inlineKeyboard }))
+const keyboard = new Keyboard()
+keyboard.webApp('Calorie Counter', WEBAPP_URL)
 
-bot.command('app', (ctx) => ctx.reply('Welcome!', { reply_markup: keyboard }))
+bot.command('start', (ctx) => ctx.reply('Welcome!'))
+
+bot.command('app', (ctx) => ctx.reply('Open App', { reply_markup: keyboard }))
 
 bot.command('ping', (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`))
 
-// bot.filter(ctx => ctx.update.message == "value")
+bot.filter(
+  (ctx) => ctx.update.message !== undefined,
+  (ctx) => {
+    console.log('filtered')
+    console.log(ctx.update.message?.web_app_data)
+  },
+)
