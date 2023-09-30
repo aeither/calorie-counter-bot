@@ -20,7 +20,7 @@ await liveBot.api.setMyCommands(commands)
  */
 
 // Update Local Webhook
-const PROJECT_URL = 'https://0b55-217-165-234-214.ngrok-free.app'
+const PROJECT_URL = 'https://e195-217-165-234-214.ngrok-free.app'
 await bot.api.setWebhook(`${PROJECT_URL}/${TELEGRAM_BOT_TOKEN}`)
 
 // Update Live Webhook
