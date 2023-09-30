@@ -10,16 +10,14 @@ brew install deno
 
 # Run
 
-with tasks
+local
 
 ```
-deno task task-name [additional args]
+deno task dev
 ```
 
-or without
+Set up the webhook in Telegram for deployed version and commands
 
 ```
-deno run --allow-net --allow-env bot.ts
+deno task commands
 ```
-
-Rembember to set up the webhook in Telegram
