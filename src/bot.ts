@@ -17,7 +17,7 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
 
 const WEBAPP_URL =
   Deno.env.get('NODE_ENV') === 'development'
-    ? 'https://57c0-217-165-234-214.ngrok-free.app'
+    ? 'https://8a79-217-165-234-214.ngrok-free.app'
     : 'https://calorie-counter-jade.vercel.app'
 console.log('WEBAPP_URL', WEBAPP_URL)
 
