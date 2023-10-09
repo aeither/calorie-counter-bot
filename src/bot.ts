@@ -15,6 +15,7 @@ export const bot = new Bot(TELEGRAM_BOT_TOKEN, {
  * Bot Commands
  */
 
+// IMPORTANT: UPDATE WITH YOUR OWN URL
 const WEBAPP_URL =
   Deno.env.get('NODE_ENV') === 'development'
     ? 'https://8a79-217-165-234-214.ngrok-free.app'
